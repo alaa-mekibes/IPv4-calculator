@@ -1,4 +1,4 @@
-# IPv4 Subnet Calculator - GitHub README
+# IPv4 Subnet Calculator
 
 ## 📌 Overview
 
@@ -47,7 +47,7 @@ Users can download the calculation results as PDF:
 
 ![IPv4 tool screenshot desktop](/assets/img/screenShot_desktop.png)
 
-## 👨‍💻 Developer
+## 💡 Developer
 
 **Alaa MEKIBES**  
 
