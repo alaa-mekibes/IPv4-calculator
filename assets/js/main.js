@@ -3,7 +3,6 @@ class IpAddress {
         this.ip = ip;
         this.pre = pre;
         this.type = "public";
-        this.class;
         this.cases = [];
         this.casesBinary = [[], [], [], []];
         this.casesDecimal = [];
@@ -28,18 +27,6 @@ class IpAddress {
             let arr = [];
            this.casesDecimal[i] = parseInt(this.ipToDecimal(this.casesBinary[i], arr));
         }        
-    }
-
-    whichClass() {
-    const firstIpByte = this.casesDecimal[0];
-        switch (true) {
-            case firstIpByte >= 0 && firstIpByte <= 127 : this.class = "A"; break; 
-            case firstIpByte >= 128 && firstIpByte <= 191 : this.class = "B"; break; 
-            case firstIpByte >= 192 && firstIpByte <= 223 : this.class = "C"; break; 
-            case firstIpByte >= 224 && firstIpByte <= 239 : this.class = "D (Multicast)"; break; 
-            case firstIpByte >= 240 && firstIpByte <= 255 : this.class = "E (Reserved)"; break; 
-            default: this.class = "Invalid IP";
-        }
     }
 
     whichType() {
@@ -95,7 +82,6 @@ class IpAddress {
         article.innerHTML = `
         <h3>Address Information</h3>
         <p><strong>Address: </strong> <span class="decimalORstringText">${this.ip}</span> <span class="binaryText">${binary}</span></p>
-        <p><strong>Class: </strong> <span class="decimalORstringText">${this.class}</span></p>
         <p><strong>Type: </strong> <span class="decimalORstringText">${this.type}</span></p>
         `;
         document.querySelector("#result").appendChild(article);
@@ -545,20 +531,14 @@ function inputVerification() {
     if(!parseInt(prefix.value) && parseInt(subnetMask.value)) prefix.value = parseInt(subnetMask.value);
 
 
-// Validation success => Initialisation + Objects
-    warning.textContent = "";
-    document.querySelectorAll(".result_container article").forEach(article => {
-        article.remove();
-    });
-    if(document.querySelector(".result_container #download")) document.querySelector(".result_container #download").remove();
-    document.querySelector(".result_container").style.display = "block";
-    console.clear();
+// Validation success => init + Create Objects
+
+init(1);
 
 const ip = new IpAddress(ipAdd.value.trim(), parseInt(prefix.value.trim()));
 ip.ipCasesSeperator();
 ip.ipCasesInBinary();
 ip.ipCasesInDecimal();
-ip.whichClass();
 ip.whichType();
 ip.showIpAddress();
 
@@ -587,10 +567,10 @@ b.machineInBinary();
 b.ipCasesInDecimal();
 b.showIpAddress();
 
-const FLM = new FirstLastMachine(ipAdd.value.trim(), parseInt(prefix.value.trim()));
-FLM.machineInBinary();
-FLM.ipCasesInDecimal();
-FLM.showIpAddress();
+const flm = new FirstLastMachine(ipAdd.value.trim(), parseInt(prefix.value.trim()));
+flm.machineInBinary();
+flm.ipCasesInDecimal();
+flm.showIpAddress();
 
 // Smooth Scroll
 document.querySelector(".result_container").scrollIntoView({behavior: "smooth", block: "start"});
@@ -606,7 +586,20 @@ function resetInputes() {
     document.querySelector("#ipadd").value = "";
     document.querySelector("#prefix").value = "";
     document.querySelector("#subnetMask").value = "";
+
+    init(0);
 }
+
+function init(result) {
+    document.querySelector(".error").textContent = "";
+    document.querySelectorAll(".result_container article").forEach(article => {
+        article.remove();
+    });
+    if(document.querySelector(".result_container #download")) document.querySelector(".result_container #download").remove();
+    if(result === 0) document.querySelector(".result_container").style.display = "none";
+    else document.querySelector(".result_container").style.display = "block";
+    console.clear();
+} 
 
 document.addEventListener("DOMContentLoaded", _ => {
     document.querySelector("#calculate").addEventListener("click", inputVerification);
