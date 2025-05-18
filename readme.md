@@ -46,7 +46,6 @@ Users can download the calculation results as PDF:
 ## 🖼️ Screenshot
 
 ![IPv4 tool screenshot desktop](/assets/img/screenShot_desktop.png)
-![IPv4 tool screenshot mobile](/assets/img/screenShot_mobile.png)
 
 ## 👨‍💻 Developer
 
