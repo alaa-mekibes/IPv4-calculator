@@ -516,7 +516,7 @@ function inputVerification() {
     const prefix = document.querySelector("#prefix");
     const subnetMask = document.querySelector("#subnetMask");
     const warning = document.querySelector(".error");
-    const ipValidation = /^[0-9]{1,3}(\.[0-9]{1,3}){3}/;
+    const ipValidation = /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}$/;
 
 // Validation Checker
     if(!ipAdd.value) {
