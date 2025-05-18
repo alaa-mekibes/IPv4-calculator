@@ -1,0 +1,46 @@
+{
+  "name": "IPv4 Calculator",
+  "short_name": "IPv4",
+  "start_url": "https://chakhabit.github.io/kabisni/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e4267",
+  "description": "IP calculator tool to analyze subnets, wildcard masks, host ranges, and more",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/fGGJVY5m/IPv4-Converter-App-Icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

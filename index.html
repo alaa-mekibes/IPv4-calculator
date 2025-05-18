@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="IP calculator tool to analyze subnets, wildcard masks, host ranges, and more">
+    <meta name="author" content="Alaa MEKIBES">
+    <meta name="theme-color" content="#1e4267">
+    
+    <meta property="og:title" content="IP Calculator">
+    <meta property="og:description" content="Powerful IP calculator for subnetting, wildcards, ranges, and more.">
+    <meta property="og:image" content="https://i.ibb.co/846spN28/IP-Address.png">
+    <meta property="og:url" content="https://github.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IP Calculator">
+    <meta name="twitter:description" content="Subnet masks, broadcast addresses, host ranges — all calculated instantly.">
+    <meta name="twitter:image" content="https://i.ibb.co/846spN28/IP-Address.png">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>IPv4 Calculator</title>
+</head>
+<body>
+    <main class="main_container">
+        <header class="cover">
+            <img src="assets/img/IPv4.webp" alt="ip address cover">
+        </header>
+        <section class="intro">
+            <h1>IPv4 Subnet Calculator</h1>
+            <article class="input_container">
+                <label for="ipadd">Please Enter a valid ip address, ex: <span>192.168.1.1/24</span> OR <span>192.168.1.1/255.255.255.0</span></label>
+                <div class="input">
+                    <input type="text" name="ipAddress" id="ipadd">
+                    / <input type="number" name="prefix" id="prefix" min="1" max="32">
+                    Or <select name="subnetMask" id="subnetMask">
+                        <option selected disabled value="">Select Subnet Mask</option>
+                        <option value="32">255.255.255.255</option>
+                        <option value="31">255.255.255.254</option>
+                        <option value="30">255.255.255.252</option>
+                        <option value="29">255.255.255.248</option>
+                        <option value="28">255.255.255.240</option>
+                        <option value="27">255.255.255.224</option>
+                        <option value="26">255.255.255.192</option>
+                        <option value="25">255.255.255.128</option>
+                        <option value="24">255.255.255.0</option>
+                        <option value="23">255.255.254.0</option>
+                        <option value="22">255.255.252.0</option>
+                        <option value="21">255.255.248.0</option>
+                        <option value="20">255.255.240.0</option>
+                        <option value="19">255.255.224.0</option>
+                        <option value="18">255.255.192.0</option>
+                        <option value="17">255.255.128.0</option>
+                        <option value="16">255.255.0.0</option>
+                        <option value="15">255.254.0.0</option>
+                        <option value="14">255.252.0.0</option>
+                        <option value="13">255.248.0.0</option>
+                        <option value="12">255.240.0.0</option>
+                        <option value="11">255.224.0.0</option>
+                        <option value="10">255.192.0.0</option>
+                        <option value="9">255.128.0.0</option>
+                        <option value="8">255.0.0.0</option>
+                        <option value="7">254.0.0.0</option>
+                        <option value="6">252.0.0.0</option>
+                        <option value="5">248.0.0.0</option>
+                        <option value="4">240.0.0.0</option>
+                        <option value="3">224.0.0.0</option>
+                        <option value="2">192.0.0.0</option>
+                        <option value="1">128.0.0.0</option>
+                    </select>
+                </div>
+                <span class="error"></span>
+                <div class="button">
+                    <button id="calculate">calculate</button>
+                    <button id="reset">reset</button>
+                </div>
+            </article>
+        </section>
+        <section id="result" class="result_container">
+            <h2>IPv4 Subnet Calculation Result</h2>
+            <p>Detailed IP configuration and subnet data:</p>
+        </section>
+        <p id="credit">Powered by <a href='https://github.com'> Alaa Mekibes</a></p>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
