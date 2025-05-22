@@ -588,6 +588,7 @@ document.querySelector(".result_container").scrollIntoView({behavior: "smooth", 
 // Download Button
 const downloadPdfBtn = document.createElement("button");
 downloadPdfBtn.id = "download";
+downloadPdfBtn.setAttribute('aria-label', 'Download IP address information as PDF');
 downloadPdfBtn.textContent = "Donwload as pdf";
 document.querySelector("#result").appendChild(downloadPdfBtn);
 downloadPdfBtn.addEventListener("click", _ => print());
@@ -608,7 +609,10 @@ function init(result) {
     });
     if(document.querySelector(".result_container #download")) document.querySelector(".result_container #download").remove();
     if(result === 0) document.querySelector(".result_container").style.display = "none";
-    else document.querySelector(".result_container").style.display = "block";
+    else {
+        document.querySelector(".result_container").style.display = "block";
+        document.querySelector(".result_container").setAttribute('aria-live', 'polite'); 
+    } 
     console.clear();
 } 
 
