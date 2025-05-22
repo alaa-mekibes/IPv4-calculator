@@ -25,8 +25,6 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
-  outline: 0;
 }
 
 ol,
@@ -90,20 +88,25 @@ section {
 }
 
 button {
+    all: unset;
     padding: 10px;
     border-radius: 8px;
     background-color: var(--mainColor);
     color: var(--buttonColor);
     font-weight: var(--fW500);
-    width: 40%;
+    width: 30%;
     font-size: 15px;
     cursor: pointer;
     transition: .3s;
+    text-align: center;
     &:hover {
         background-color: var(--secondColor);
     }
 }
-
+a:focus-visible, button:focus-visible, .custom-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px orange !important;
+}
 body {
     font-family: monospace, sans-serif;
     display: flex;
@@ -181,7 +184,7 @@ body {
     align-items: center;
     gap: 1rem;
     button:last-child {
-        width: 30%;
+        width: 20%;
     }
 }
 .main_container .result_container {

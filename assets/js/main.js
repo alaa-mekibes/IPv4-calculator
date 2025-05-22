@@ -507,24 +507,34 @@ function inputVerification() {
 // Validation Checker
     if(!ipAdd.value) {
         warning.textContent = "the IP address entry is empty";
+        ipAdd.setAttribute("aria-invalid", "true");
+        prefix.setAttribute("aria-invalid", "false");
         return;
     }else if(!parseInt(prefix.value) && !parseInt(subnetMask.value)) {
         warning.textContent = "You must select a subnet mask OR enter a prefix";
+        prefix.setAttribute("aria-invalid", "true");
+        ipAdd.setAttribute("aria-invalid", "false");
         return;
     }
 
     if(parseInt(prefix.value) < 1 || parseInt(prefix.value) > 32) {
         warning.textContent = "enter a valid prefix [1 - 32]";
+        prefix.setAttribute("aria-invalid", "true");
+        ipAdd.setAttribute("aria-invalid", "false");
         return;
     }
 
     if(!ipValidation.test(ipAdd.value.trim())) {
         warning.textContent = "enter a valid ip Address";
+        ipAdd.setAttribute("aria-invalid", "true");
+        prefix.setAttribute("aria-invalid", "false");
         return;
     }
 
     if(parseInt(prefix.value) && parseInt(subnetMask.value) && parseInt(prefix.value) !== parseInt(subnetMask.value)) {
         warning.textContent = "Prefix value does not match the subnet mask";
+        prefix.setAttribute("aria-invalid", "true");
+        ipAdd.setAttribute("aria-invalid", "false");
         return;
     }
 
@@ -532,7 +542,8 @@ function inputVerification() {
 
 
 // Validation success => init + Create Objects
-
+prefix.setAttribute("aria-invalid", "false");
+ipAdd.setAttribute("aria-invalid", "false");
 init(1);
 
 const ip = new IpAddress(ipAdd.value.trim(), parseInt(prefix.value.trim()));
