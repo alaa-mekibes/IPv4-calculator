@@ -210,7 +210,7 @@ body {
 }
 
 .results-section .results-section__results {
-  :is(p, span) {
+  :where(p, span) {
     font-size: 1.0625rem;
     margin-block-end: 0.625rem;
     font-weight: var(--fW700);
@@ -256,7 +256,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
   }
-  .results-section article :is(p, span) {
+  .results-section .results-section__results :where(p, span) {
     font-size: 0.875rem;
   }
   .results-section .results-section__download {
