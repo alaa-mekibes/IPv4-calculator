@@ -12,12 +12,15 @@ The calculator was developed using modern JavaScript classes following OOP princ
 
 ```javascript
 class IpAddress {} // Base class for IP address operations
-class NetworkParts extends IpAddress {} // Handles common network components
-class Network extends NetworkParts {} // Calculates network address
-class SubnetMask extends NetworkParts {} // Handles subnet mask operations
-class WildCardMask extends NetworkParts {} // Calculates wildcard mask
-class Broadcast extends NetworkParts {} // Calculates broadcast address
-class FirstLastMachine extends NetworkParts {} // Determines first/last usable hosts
+class NetworkComponets extends IpAddress {} 
+/*
+- Handles common network components
+- Calculates network address
+- Handles subnet mask operations
+- Calculates wildcard mask
+- Calculates broadcast address
+- Determines first/last usable hosts
+*/
 ```
 
 This class hierarchy allows for clean code organization and easy maintenance. The UI was built with responsive CSS to work well on different devices.

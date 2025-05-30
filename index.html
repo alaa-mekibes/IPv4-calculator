@@ -31,15 +31,15 @@
 </head>
 <body>
     <main class="main">
-        <header class="main__cover" aria-hidden="true">
+        <header class="cover" aria-hidden="true">
             <img src="assets/img/IPv4.webp" alt="">
         </header>
-        <section class="main__intro">
+        <section class="intro">
             <h1>IPv4 Subnet Calculator</h1>
-            <article class="main__input-container" aria-label="Set a valid IP address with prefix or select a mask">
+            <article class="input-form" aria-label="Set a valid IP address with prefix or select a mask">
                 <label for="ipadd">Please Enter a valid ip address, ex: <span>192.168.1.1/24</span> OR <span>192.168.1.1/255.255.255.0</span></label>
                 <form>
-                    <div class="main__input-group">
+                    <div class="input-form__group">
                     <input type="text" name="ipAddress" id="ipadd">
                     / <input aria-label="set a valid prefix" type="number" name="prefix" id="prefix" min="1" max="32">
                     Or <select aria-label="set a valid mask matching with prefix if you add it" name="subnetMask" id="subnetMask">
@@ -78,19 +78,19 @@
                         <option value="1">128.0.0.0</option>
                     </select>
                 </div>
-                <span id="errorMSG" class="main__error" role="alert"></span>
-                <div class="main__button-group">
+                <span id="errorMSG" class="input-form__error" role="alert"></span>
+                <div class="input-form__button-group">
                     <button type="button" id="calculate" aria-label="Calculate IP address information">calculate</button>
                     <button type="button" id="reset" aria-label="Reset IP address calculator form">reset</button>
                 </div>
                 </form>
             </article>
         </section>
-        <section id="result" class="main__result-container" aria-label="IP address calculation results">
+        <section id="result" class="results-section" aria-label="IP address calculation results">
             <h2>IPv4 Subnet Calculation Result</h2>
             <p>Detailed IP configuration and subnet data:</p>
         </section>
-        <p class="main__credit">Developed by <a href='https://github.com/alaa-mekibes/IPv4-calculator'> Alaa Mekibes</a></p>
+        <p class="main__credit">Developed by<a href='https://github.com/alaa-mekibes/IPv4-calculator'> Alaa Mekibes</a></p>
     </main>
     <script src="assets/js/main.js"></script>
 </body>

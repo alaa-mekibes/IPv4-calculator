@@ -242,24 +242,24 @@ class NetworkComponets extends IpAddress {
   showIpAddress() {
     const resultContainer = document.querySelector("#result");
     const article = document.createElement("article");
-    article.id = "main__result"
+    article.classList.add("results-section__results");
     article.innerHTML = `
         <h3>Address Information</h3>
-        <p><strong>Address: </strong> <span class="decimalORstringText">${this.ip}</span> <span class="binaryText">${this.ipBinaryStr}</span></p>
-        <p><strong>Type: </strong> <span class="decimalORstringText">${this.type}</span></p>
+        <p><strong>Address: </strong> <span class="results-section--decimalORstringText">${this.ip}</span> <span class="results-section--binaryText">${this.ipBinaryStr}</span></p>
+        <p><strong>Type: </strong> <span class="results-section--decimalORstringText">${this.type}</span></p>
         <h3>Network Information</h3>
-        <p><strong>Network Address: </strong> <span class="decimalORstringText">${this.networkDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="binaryPart">${this.networkBinary}</span> <span class="binaryText">${this.machineBinaryInZero}</span></span></p>
-        <p><strong>Number of network bits: </strong> <span class="decimalORstringText">${this.networkBitNumber}</span></p>
-        <p><strong>SubnetMask: </strong> <span class="decimalORstringText">${this.subnetMaskDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="binaryPart">${this.subnetMaskBinary}</span> <span class="binaryText">${this.machineBinaryInZero}</span></span></p>
-        <p><strong>Wildcard Mask: </strong> <span class="decimalORstringText">${this.wildCardMaskDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="binaryPart">${this.wildCardMaskBinary}</span> <span class="binaryText">${this.machineBinaryInOne}</span></span></p>
-        <p><strong>CIDR Notation: </strong><span class="decimalORstringText">/${this.pre}</span></p>
+        <p><strong>Network Address: </strong> <span class="results-section--decimalORstringText">${this.networkDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="results-section--binaryPart">${this.networkBinary}</span> <span class="results-section--binaryText">${this.machineBinaryInZero}</span></span></p>
+        <p><strong>Number of network bits: </strong> <span class="results-section--decimalORstringText">${this.networkBitNumber}</span></p>
+        <p><strong>SubnetMask: </strong> <span class="results-section--decimalORstringText">${this.subnetMaskDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="results-section--binaryPart">${this.subnetMaskBinary}</span> <span class="results-section--binaryText">${this.machineBinaryInZero}</span></span></p>
+        <p><strong>Wildcard Mask: </strong> <span class="results-section--decimalORstringText">${this.wildCardMaskDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="results-section--binaryPart">${this.wildCardMaskBinary}</span> <span class="results-section--binaryText">${this.machineBinaryInOne}</span></span></p>
+        <p><strong>CIDR Notation: </strong><span class="results-section--decimalORstringText">/${this.pre}</span></p>
         <h3>IP Range & Usable Hosts</h3>
-        <p><strong>Broadcast: </strong> <span class="decimalORstringText">${this.broadcastDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="binaryPart">${this.networkBinary}</span> <span class="binaryText">${this.machineBinaryInZero}</span></span></p>
-        <p><strong>Number of host bits: </strong> <span class="decimalORstringText">${this.machineBitNumber}</span></p>
-        <p><strong>First Usable IP: </strong> <span class="decimalORstringText">${this.firstMachineDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="binaryPart">${this.networkBinary}</span> <span class="binaryText">${this.firstMachineBinary}</span></span></p>
-        <p><strong>Last Usable IP: </strong> <span class="decimalORstringText">${this.lastMachineDecimal.join("."
-        )}</span> <span style="white-space: nowrap;"><span class="binaryPart">${this.networkBinary}</span> <span class="binaryText">${this.lastMachineBinary}</span></span></p>
-        <p><strong>Number of hosts: </strong> <span class="decimalORstringText">${this.mahineNumber}</span></p>
+        <p><strong>Broadcast: </strong> <span class="results-section--decimalORstringText">${this.broadcastDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="results-section--binaryPart">${this.networkBinary}</span> <span class="results-section--binaryText">${this.machineBinaryInZero}</span></span></p>
+        <p><strong>Number of host bits: </strong> <span class="results-section--decimalORstringText">${this.machineBitNumber}</span></p>
+        <p><strong>First Usable IP: </strong> <span class="results-section--decimalORstringText">${this.firstMachineDecimal.join(".")}</span> <span style="white-space: nowrap;"><span class="results-section--binaryPart">${this.networkBinary}</span> <span class="results-section--binaryText">${this.firstMachineBinary}</span></span></p>
+        <p><strong>Last Usable IP: </strong> <span class="results-section--decimalORstringText">${this.lastMachineDecimal.join("."
+        )}</span> <span style="white-space: nowrap;"><span class="results-section--binaryPart">${this.networkBinary}</span> <span class="results-section--binaryText">${this.lastMachineBinary}</span></span></p>
+        <p><strong>Number of hosts: </strong> <span class="results-section--decimalORstringText">${this.mahineNumber}</span></p>
         `;
     resultContainer.appendChild(article);
   }
@@ -270,15 +270,14 @@ function inputVerification() {
   const ipAdd = document.querySelector("#ipadd");
   const prefix = document.querySelector("#prefix");
   const subnetMask = document.querySelector("#subnetMask");
-  const warning = document.querySelector(".main__error");
-  const resultContainer = document.querySelector(".main__result-container");
+  const warning = document.querySelector("#errorMSG");
+  const resultContainer = document.querySelector(".results-section");
   const ipValidation = /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}$/;
 
   const setInvalid = (filed, msg, ipStatus, prefixStatus, removeOtherAtt) => {
     warning.textContent = msg;
     ipAdd.setAttribute("aria-invalid", ipStatus);
     prefix.setAttribute("aria-invalid", prefixStatus);
-    console.log(filed);
     filed.setAttribute("aria-describedby", "errorMSG");
     removeOtherAtt.removeAttribute("aria-describedby");
 }
@@ -322,7 +321,7 @@ function inputVerification() {
   // Download Button
   const downloadPdfBtn = document.createElement("button");
   downloadPdfBtn.id = "download";
-  downloadPdfBtn.classList.add("main__download");
+  downloadPdfBtn.classList.add("results-section__download");
   downloadPdfBtn.setAttribute("type","button");
   downloadPdfBtn.setAttribute("aria-label","Download IP address information as PDF");
   downloadPdfBtn.textContent = "Donwload as pdf";
@@ -338,10 +337,10 @@ function resetInputes() {
 }
 
 function init(result) {
-  const errorFiled = document.querySelector(".main__error");
+  const errorFiled = document.querySelector("#errorMSG");
   const articleContainer = document.querySelector(".main__result")
   const downloadBtn = document.querySelector("#download");
-  const resultContainer = document.querySelector(".main__result-container");
+  const resultContainer = document.querySelector(".results-section");
   const ipAdd = document.querySelector("#ipadd");
   const prefix = document.querySelector("#prefix");
 
