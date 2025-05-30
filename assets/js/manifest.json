@@ -1,7 +1,7 @@
 {
   "name": "IPv4 Calculator",
   "short_name": "IPv4",
-  "start_url": "https://alaa-mekibes.github.io/IPv4-calculator/",
+  "start_url": "https://ipv4calc.vercel.app",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1e4267",
