@@ -30,19 +30,20 @@
     <title>IPv4 Calculator</title>
 </head>
 <body>
-    <main class="main_container">
-        <header aria-hidden="true" class="cover">
+    <main class="main">
+        <header class="main__cover" aria-hidden="true">
             <img src="assets/img/IPv4.webp" alt="">
         </header>
-        <section class="intro">
+        <section class="main__intro">
             <h1>IPv4 Subnet Calculator</h1>
-            <article aria-label="Set a valid IP address with prefix or select a mask" class="input_container">
+            <article class="main__input-container" aria-label="Set a valid IP address with prefix or select a mask">
                 <label for="ipadd">Please Enter a valid ip address, ex: <span>192.168.1.1/24</span> OR <span>192.168.1.1/255.255.255.0</span></label>
-                <div class="input">
-                    <input aria-describedby="errorMSG" type="text" name="ipAddress" id="ipadd">
-                    / <input aria-describedby="errorMSG" aria-label="set a valid prefix" type="number" name="prefix" id="prefix" min="1" max="32">
-                    Or <select aria-describedby="errorMSG" aria-label="set a valid mask matching with prefix if you add it" name="subnetMask" id="subnetMask">
-                        <option selected disabled value="">Select Subnet Mask</option>
+                <form>
+                    <div class="main__input-group">
+                    <input type="text" name="ipAddress" id="ipadd">
+                    / <input aria-label="set a valid prefix" type="number" name="prefix" id="prefix" min="1" max="32">
+                    Or <select aria-label="set a valid mask matching with prefix if you add it" name="subnetMask" id="subnetMask">
+                        <option selected value="">Select Subnet Mask</option>
                         <option value="32">255.255.255.255</option>
                         <option value="31">255.255.255.254</option>
                         <option value="30">255.255.255.252</option>
@@ -77,18 +78,19 @@
                         <option value="1">128.0.0.0</option>
                     </select>
                 </div>
-                <span role="alert" id="errorMSG" class="error"></span>
-                <div class="button">
-                    <button aria-label="Calculate IP address information" id="calculate">calculate</button>
-                    <button aria-label="Reset IP address calculator form" id="reset">reset</button>
+                <span id="errorMSG" class="main__error" role="alert"></span>
+                <div class="main__button-group">
+                    <button type="button" id="calculate" aria-label="Calculate IP address information">calculate</button>
+                    <button type="button" id="reset" aria-label="Reset IP address calculator form">reset</button>
                 </div>
+                </form>
             </article>
         </section>
-        <section id="result" class="result_container" aria-label="IP address calculation results">
+        <section id="result" class="main__result-container" aria-label="IP address calculation results">
             <h2>IPv4 Subnet Calculation Result</h2>
             <p>Detailed IP configuration and subnet data:</p>
         </section>
-        <p id="credit">Developed by <a href='https://github.com/alaa-mekibes/IPv4-calculator'> Alaa Mekibes</a></p>
+        <p class="main__credit">Developed by <a href='https://github.com/alaa-mekibes/IPv4-calculator'> Alaa Mekibes</a></p>
     </main>
     <script src="assets/js/main.js"></script>
 </body>
