@@ -40,8 +40,8 @@
                 <label for="ipadd">Please Enter a valid ip address, ex: <span>192.168.1.1/24</span> OR <span>192.168.1.1/255.255.255.0</span></label>
                 <form>
                     <div class="input-form__group">
-                    <input type="text" name="ipAddress" id="ipadd">
-                    / <input aria-label="set a valid prefix" type="number" name="prefix" id="prefix" min="1" max="32">
+                    <input type="text" inputmode="decimal" name="ipAddress" id="ipadd">
+                    / <input aria-label="set a valid prefix" type="number" inputmode="numeric" name="prefix" id="prefix" min="1" max="32">
                     Or <select aria-label="set a valid mask matching with prefix if you add it" name="subnetMask" id="subnetMask">
                         <option selected value="">Select Subnet Mask</option>
                         <option value="32">255.255.255.255</option>
